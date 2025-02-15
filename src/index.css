@@ -22,7 +22,7 @@ nav button {
     background-color: transparent;
     border: none;
     color: #000;
-    transition: 0.4s;
+    transition: 0.3s;
     font-size: 1em;
     cursor: pointer;
     font-family: "Montserrat", sans-serif;
@@ -71,6 +71,7 @@ textarea {
     border: none;
     padding: 10px 15px;
     font-size: 1em;
+    transition: all ease 0.3s;
 }
 
 .btn.btn-dark {
