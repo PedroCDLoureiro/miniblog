@@ -6,7 +6,6 @@ import {
     orderBy,
     onSnapshot,
     where,
-    QuerySnapshot,
 } from "firebase/firestore";
 
 export const useFetchDocuments = (docCollection, search = null, uid = null) => {
@@ -35,6 +34,12 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
                     q = await query(
                         collectionRef,
                         where("tagsArray", "array-contains", search),
+                        orderBy("createdAt", "desc")
+                    );
+                } else if (uid) {
+                    q = await query(
+                        collectionRef,
+                        where("uid", "==", uid),
                         orderBy("createdAt", "desc")
                     );
                 } else {
